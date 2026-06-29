@@ -1,0 +1,19 @@
+name = "cf-r2-drive"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+SITE_TITLE = "R2 云盘"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "my-r2-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "r2-drive-db"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[triggers]
+crons = ["0 2 * * *"]
