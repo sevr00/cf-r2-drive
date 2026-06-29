@@ -4,7 +4,6 @@ const DEFAULT_CONFIG = {
   SHARE_EXPIRE_DAYS: 7,
   MAX_QUOTA_BYTES: 100 * 1024 * 1024 * 1024
 };
-
 function getConfig(env) {
   return {
     maxSize: (env.MAX_SIZE_MB || DEFAULT_CONFIG.MAX_SIZE_MB) * 1024 * 1024,
