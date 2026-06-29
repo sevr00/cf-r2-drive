@@ -1,4 +1,4 @@
-/**
+/** 
  * 将 src/index.html 上传到 Cloudflare R2
  * 路径：static/index.html（Worker 从此路径读取首页）
  */
