@@ -19,11 +19,20 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # 移除 cache: "npm" 这行，避免找不到 lock 文件报错
+          node-version: "22"
 
       - name: 安装依赖
         run: npm install
+
+      # 调试：打印目录结构，确认文件存在
+      - name: 检查文件结构
+        run: |
+          echo "=== 根目录 ==="
+          ls -la
+          echo "=== src 目录 ==="
+          ls -la src/ || echo "src 目录不存在！"
+          echo "=== wrangler.toml ==="
+          cat wrangler.toml
 
       - name: 部署 Worker 到 Cloudflare
         env:
@@ -39,4 +48,4 @@ jobs:
         run: node scripts/upload-static.js
 
       - name: 部署完成通知
-        run: echo "✅ 部署成功！Worker 已更新，index.html 已上传至 R2"
+        run: echo "✅ 部署成功！"
