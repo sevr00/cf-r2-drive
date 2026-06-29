@@ -1,0 +1,17 @@
+{
+  "name": "cf-r2-drive",
+  "version": "1.0.0",
+  "description": "Cloudflare R2 云盘，支持 GitHub Actions 自动部署",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "upload-static": "node scripts/upload-static.js",
+    "deploy:full": "wrangler deploy && node scripts/upload-static.js"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
