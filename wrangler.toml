@@ -1,7 +1,6 @@
 name = "cf-r2-drive"
 main = "src/worker.js"          # 确保此路径与实际文件一致
 compatibility_date = "2024-01-01"
-
 [vars]
 SITE_TITLE = "R2 云盘"
 
